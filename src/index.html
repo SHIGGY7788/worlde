@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <style>
+        @keyframes loadingAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .dot {
+            animation: loadingAnimation 1s infinite;
+        }
+    </style>
+</head>
+<body id="background">
+        <!--Wordle loading screen-->
+<div class="flex justify-center items-center h-screen loading" id="loading">
+    <div class="flex flex-col items-center">
+        <h1 class="text-4xl font-bold mb-4">Wordle</h1>
+        <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center">
+                <div class="w-8 h-8 bg-black rounded-full mx-1 dot"></div>
+                <div class="w-8 h-8 bg-black rounded-full mx-1 dot"></div>
+                <div class="w-8 h-8 bg-black rounded-full mx-1 dot"></div>
+                <div class="w-8 h-8 bg-black rounded-full mx-1 dot"></div>
+                <div class="w-8 h-8 bg-black rounded-full mx-1 dot"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Wordle game board, 5 columns by 6 rows, each with a box for the letter-->
+<div class="flex justify-center items-center h-screen hidden" id="game">
+    <div class="flex flex-col items-center">
+        <h1 class="text-4xl font-bold mb-4 text-white">Wordle</h1>
+        <div class="flex flex-col">
+            <div class="flex justify-center items-center mb-5">
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box1" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box2" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box3" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box4" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box5" maxlength="1" pattern="[A-Za-z]">
+                </div>
+            </div>
+            <div class="flex justify-center items-center mb-5">
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box6" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box7" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box8" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box9" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box10" maxlength="1" pattern="[A-Za-z]">
+                </div>
+            </div>
+            <div class="flex justify-center items-center mb-5">
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box11" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box12" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box13" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box14" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box15" maxlength="1" pattern="[A-Za-z]">
+                </div>
+            </div>
+            <div class="flex justify-center items-center mb-5">
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box16" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box17" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box18" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box19" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box20" maxlength="1" pattern="[A-Za-z]">
+                </div>
+            </div>
+            <div class="flex justify-center items-center mb-5">
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box21" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box22" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box23" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box24" maxlength="1" pattern="[A-Za-z]">
+                </div>
+                <div class="w-16 h-16 bg-white rounded-lg mx-1 flex justify-center items-center">
+                    <input type="text" class="text-4xl font-bold text-center w-16 h-16" id="box25" maxlength="1" pattern="[A-Za-z]">
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<!--Win screen-->
+<div class="flex justify-center items-center h-screen hidden bg-teal-400" id="win">
+    <div class="flex flex-col items-center">
+        <h1 class="text-4xl font-bold mb-4 text-white">You Win!</h1>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" id="playAgain">Play Again</button>
+    </div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
