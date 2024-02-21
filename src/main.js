@@ -1,7 +1,8 @@
 //Wordle script
 
 //word list of random englsish words (must be 5 letters long)
-const wordList = ["apple", "beach", "candy", "demon", "eagle", "fairy", "giant", "happy", "igloo", "jelly", "kitty", "lucky", "magic", "noble", "ocean", "piano", "queen", "radio", "sunny", "tiger", "unity", "vivid", "witty", "xenon", "young", "abide", "baker", "cabin", "daisy", "eager", "fable", "gamer", "haste", "ideal", "joker", "karma", "laser", "mango", "noble", "oasis", "pilot", "quilt", "rider", "saint", "tango", "unity", "vivid", "witty", "xenon", "yacht", "zebra"];
+const wordList = ["apple", "beach", "candy", "demon", "eagle", "fairy", "giant", "happy", "igloo", "jelly", "kitty", "lucky", "magic", "noble", "ocean", "piano", "queen", "radio", "sunny", "tiger", "unity", "vivid", "witty", "xenon", "young", "abide", "baker", "cabin", "daisy", "eager", "fable", "gamer", "haste", "ideal", "joker", "karma", "laser", "mango", "oasis", "pilot", "quilt", "rider", "saint", "tango", "yacht", "zebra", "azure", "blink", "clown", "duvet", "elite", "flame", "gusto", "hazel", "infix", "joust", "koala", "lunar", "mirth", "nymph", "otter", "pique", "query", "riser", "sloth", "thyme", "ultra", "vixen", "whale", "xerox", "youth", "zesty"];
+
 
 //randomly select a word from the word list
 let word = wordList[Math.floor(Math.random() * wordList.length)];
@@ -143,7 +144,7 @@ function run() {
                 //Hide everything else and show win screen
                 game.classList.add("hidden");
                 winscreen.classList.remove("hidden");
-                
+
             } else {
                 for (let i = 0; i < boxArray[0].length; i++) {
                     if (wordArray.includes(boxArray[0][i].value)) {
